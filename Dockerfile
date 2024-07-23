@@ -8,5 +8,5 @@ RUN gradle clean build || true
 FROM openjdk:17-slim
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar /app/app.jar
-COPY --from=build /app/build/reports/tests/test/index.html /app/test-report.html
+#COPY --from=build /app/build/reports/tests/test/index.html /app/test-report.html
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
